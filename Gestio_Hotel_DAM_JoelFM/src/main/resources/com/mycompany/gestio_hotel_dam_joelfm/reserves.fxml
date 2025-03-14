@@ -26,9 +26,10 @@
         <TextField fx:id="dataFiField" promptText="Data Fi (YYYY-MM-DD)"/>
     </HBox>
     
-    <!-- Botó per fer reserves -->
+    <!-- Botons per fer i eliminar reserves -->
     <HBox spacing="10">
         <Button text="Fer Reserva" onAction="#ferReserva"/>
+        <Button text="Eliminar Reserva" onAction="#eliminarReserva"/>
     </HBox>
 
     <!-- Llista de reserves -->

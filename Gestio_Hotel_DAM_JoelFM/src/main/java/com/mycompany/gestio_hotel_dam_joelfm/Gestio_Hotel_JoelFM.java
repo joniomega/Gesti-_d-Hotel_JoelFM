@@ -29,7 +29,7 @@ public class Gestio_Hotel_JoelFM {
             System.out.println("0. Sortir");
             System.out.print("Tria una opció: ");
             opcio = scanner.nextInt();
-            scanner.nextLine(); // Consumir salt de línia
+            scanner.nextLine(); 
 
             switch (opcio) {
                 case 1:
@@ -51,14 +51,13 @@ public class Gestio_Hotel_JoelFM {
                     System.out.println("Sortint del programa...");
                     break;
                 default:
-                    System.out.println("⚠ Opció no vàlida. Torna-ho a intentar.");
+                    System.out.println("Opció no vàlida. Torna-ho a intentar.");
             }
         } while (opcio != 0);
 
         scanner.close();
     }
 
-    // ➤ Afegir Client
     private static void afegirClient(Scanner scanner) {
         System.out.println("\n[📌 Afegir Client]");
 
@@ -105,7 +104,6 @@ public class Gestio_Hotel_JoelFM {
         }
     }
 
-    // ➤ Afegir Empleat
     private static void afegirEmpleat(Scanner scanner) {
         System.out.println("\n[📌 Afegir Empleat]");
 
@@ -141,7 +139,6 @@ public class Gestio_Hotel_JoelFM {
         }
     }
 
-    // ➤ Fer una Reserva
     private static void ferReserva(Scanner scanner) {
         System.out.println("\n[📌 Fer Reserva]");
         System.out.print("ID del Client: ");
@@ -170,7 +167,6 @@ public class Gestio_Hotel_JoelFM {
         }
     }
 
-    // ➤ Generar Factura
 private static void generarFactura(Scanner scanner) {
     System.out.println("\n[📌 Generar Factura]");
 
@@ -203,7 +199,6 @@ private static void generarFactura(Scanner scanner) {
         System.out.println("❌ Error en generar factura: " + e.getMessage());
     }
 }
-// ➤ Gestionar Tasques
 private static void gestionarTasques(Scanner scanner) {
     System.out.println("\n[📌 Gestionar Tasques]");
 

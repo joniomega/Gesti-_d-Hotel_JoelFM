@@ -59,6 +59,33 @@ public class ReservesController {
         }
     }
 
+    @FXML
+    private void eliminarReserva() {
+        // Obtenim la reserva seleccionada
+        String reservaSeleccionada = reservesListView.getSelectionModel().getSelectedItem();
+        if (reservaSeleccionada == null) {
+            mostrarMissatge("⚠ Selecciona una reserva per eliminar.");
+            return;
+        }
+
+        // Extreure l'ID de la reserva seleccionada
+        int idReserva = Integer.parseInt(reservaSeleccionada.split(" - ")[0]);
+
+        // Eliminar la reserva de la base de dades
+        String sql = "DELETE FROM reserves WHERE id_reserva = ?";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, idReserva);
+            stmt.executeUpdate();
+            mostrarMissatge("✅ Reserva eliminada correctament!");
+            carregarReserves(); // Recarregar la llista de reserves
+        } catch (SQLException e) {
+            mostrarMissatge("❌ Error en eliminar reserva: " + e.getMessage());
+        }
+    }
+
     private void carregarReserves() {
         reservesList.clear();
         String sql = "SELECT r.id_reserva, r.id_client, r.id_habitacio, r.data_inici, r.data_fi, p.nom, p.cognom " +

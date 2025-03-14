@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestio_hotel_dam_joelfm.ReservesController">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+    
+    <Label text="Gestió de Reserves" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <!-- Camps de text per fer reserves -->
+    <HBox spacing="10">
+        <TextField fx:id="idClientField" promptText="ID del Client"/>
+        <TextField fx:id="idHabitacioField" promptText="ID de l'Habitació"/>
+    </HBox>
+    <HBox spacing="10">
+        <TextField fx:id="dataIniciField" promptText="Data Inici (YYYY-MM-DD)"/>
+        <TextField fx:id="dataFiField" promptText="Data Fi (YYYY-MM-DD)"/>
+    </HBox>
+    
+    <!-- Botó per fer reserves -->
+    <HBox spacing="10">
+        <Button text="Fer Reserva" onAction="#ferReserva"/>
+    </HBox>
+
+    <!-- Llista de reserves -->
+    <Label text="Llista de Reserves:" style="-fx-font-weight: bold;" />
+
+    <!-- Scroll amb la llista de reserves -->
+    <ScrollPane fitToWidth="true">
+        <ListView fx:id="reservesListView" prefHeight="200"/>
+    </ScrollPane>
+
+    <!-- Botó per canviar a la vista principal -->
+    <Button text="Switch to Primary View" onAction="#switchToPrimary"/>
+</VBox>

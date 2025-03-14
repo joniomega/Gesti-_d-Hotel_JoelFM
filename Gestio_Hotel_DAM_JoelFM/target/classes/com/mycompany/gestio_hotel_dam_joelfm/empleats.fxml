@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestio_hotel_dam_joelfm.EmpleatsController">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+    
+    <Label text="Gestió d'Empleats" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <!-- Camps de text per afegir nous empleats -->
+    <!-- Camps de Persona -->
+    <HBox spacing="10">
+        <TextField fx:id="nomField" promptText="Nom"/>
+        <TextField fx:id="cognomField" promptText="Cognom"/>
+        <TextField fx:id="adrecaField" promptText="Adreça"/>
+    </HBox>
+    <HBox spacing="10">
+        <TextField fx:id="documentIdentitatField" promptText="Document Identitat"/>
+        <TextField fx:id="dataNaixementField" promptText="Data de Naixement (YYYY-MM-DD)"/>
+        <TextField fx:id="telefonField" promptText="Telèfon"/>
+    </HBox>
+    <HBox spacing="10">
+        <TextField fx:id="emailField" promptText="Email"/>
+    </HBox>
+
+    <!-- Camps d'Empleat -->
+    <HBox spacing="10">
+        <TextField fx:id="llocFeinaField" promptText="Lloc de Treball"/>
+        <TextField fx:id="dataContratacioField" promptText="Data de Contractació (YYYY-MM-DD)"/>
+        <TextField fx:id="salariBrutField" promptText="Salari Brut"/>
+        <TextField fx:id="estatLaboralField" promptText="Estat Laboral (Actiu/Baixa/Permís)"/>
+    </HBox>
+    
+    <!-- Botons per afegir i eliminar empleats -->
+    <HBox spacing="10">
+        <Button text="Afegir Empleat" onAction="#afegirEmpleat"/>
+        <Button text="Eliminar Empleat" onAction="#eliminarEmpleat"/>
+    </HBox>
+
+    <!-- Llista d'empleats -->
+    <Label text="Llista d'Empleats:" style="-fx-font-weight: bold;" />
+
+    <!-- Scroll amb la llista d'empleats -->
+    <ScrollPane fitToWidth="true">
+        <ListView fx:id="empleatsListView" prefHeight="200"/>
+    </ScrollPane>
+    <Button text="Switch to MENU" onAction="#switchToPrimary"/>
+</VBox>

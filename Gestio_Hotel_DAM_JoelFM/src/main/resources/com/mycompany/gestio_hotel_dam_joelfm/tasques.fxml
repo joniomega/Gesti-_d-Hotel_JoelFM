@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestio_hotel_dam_joelfm.TasquesController">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+    
+    <Label text="Gestió de Tasques" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <!-- Camps de text per afegir noves tasques -->
+    <HBox spacing="10">
+        <TextField fx:id="idEmpleatField" promptText="ID de l'Empleat"/>
+        <TextField fx:id="descripcioField" promptText="Descripció de la Tasca"/>
+    </HBox>
+    <HBox spacing="10">
+        <TextField fx:id="dataCreacioField" promptText="Data de Creació (YYYY-MM-DD)"/>
+        <TextField fx:id="dataExecucioField" promptText="Data d'Execució (YYYY-MM-DD)"/>
+        <ComboBox fx:id="estatComboBox" promptText="Estat de la Tasca"/>
+    </HBox>
+    
+    <!-- Botons per afegir i modificar tasques -->
+    <HBox spacing="10">
+        <Button text="Afegir Tasca" onAction="#afegirTasca"/>
+        <Button text="Modificar Estat" onAction="#modificarEstatTasca"/>
+    </HBox>
+
+    <!-- Llista de tasques -->
+    <Label text="Llista de Tasques:" style="-fx-font-weight: bold;" />
+
+    <!-- Scroll amb la llista de tasques -->
+    <ScrollPane fitToWidth="true">
+        <ListView fx:id="tasquesListView" prefHeight="200"/>
+    </ScrollPane>
+
+    <!-- Botó per canviar a la vista principal -->
+    <Button text="Switch to MENU" onAction="#switchToPrimary"/>
+</VBox>

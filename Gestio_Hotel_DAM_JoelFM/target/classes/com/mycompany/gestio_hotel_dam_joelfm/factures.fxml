@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestio_hotel_dam_joelfm.FacturesController">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+    
+    <Label text="Gestió de Factures" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <!-- Camps de text per generar noves factures -->
+    <HBox spacing="10">
+        <TextField fx:id="idReservaField" promptText="ID de la Reserva"/>
+        <TextField fx:id="baseImposableField" promptText="Base Imposable (€)"/>
+    </HBox>
+    <HBox spacing="10">
+        <TextField fx:id="ivaField" promptText="IVA (%)"/>
+        <TextField fx:id="totalField" promptText="Total (€)" editable="false"/>
+    </HBox>
+    <HBox spacing="10">
+        <TextField fx:id="dataEmisioField" promptText="Data d'Emissió (YYYY-MM-DD)"/>
+        <ComboBox fx:id="metodePagamentComboBox" promptText="Mètode de Pagament"/>
+    </HBox>
+    
+    <!-- Botons per generar i eliminar factures -->
+    <HBox spacing="10">
+        <Button text="Generar Factura" onAction="#generarFactura"/>
+        <Button text="Eliminar Factura" onAction="#eliminarFactura"/>
+    </HBox>
+
+    <!-- Llista de factures -->
+    <Label text="Llista de Factures:" style="-fx-font-weight: bold;" />
+
+    <!-- Scroll amb la llista de factures -->
+    <ScrollPane fitToWidth="true">
+        <ListView fx:id="facturesListView" prefHeight="200"/>
+    </ScrollPane>
+
+    <!-- Botó per canviar a la vista principal -->
+    <Button text="Switch to Primary View" onAction="#switchToPrimary"/>
+</VBox>

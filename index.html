@@ -4,105 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentació del Projecte de Gestió d'Hotel</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            cursor: pointer;
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .section h2:hover {
-            background-color: #e9e9e9;
-        }
-        .section .content {
-            display: none;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-top: none;
-            border-radius: 0 0 5px 5px;
-        }
-        .section .content img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 10px;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<h1>Documentació del Projecte de Gestió d'Hotel</h1>
-
-<!-- Manual Bàsic d'Ús -->
+<div class="container">
+<h1>Documentació Projecte Gestió Hotel JoelFM</h1>
+<h3>Introducció</h3>
+<p>
+    Aquesta aplicació està dissenyada per gestionar les operacions bàsiques d'un hotel, com ara la gestió de clients, empleats, reserves, factures i tasques. L'aplicació està desenvolupada en JavaFX i utilitza una base de dades MySQL per emmagatzemar la informació.
+</p>
 <div class="section">
-    <h2 onclick="toggleSection('manual')">Manual Bàsic d'Ús</h2>
+    <h2 onclick="toggleSection('manual')">⬊ Manual Bàsic d'Ús ⬋</h2>
     <div id="manual" class="content">
-        <h3>Inserció de Clients</h3>
+        <h3>Clients</h3>
         <p>
-            Per inserir un client, segueix aquests passos:
-            <ol>
-                <li>Obre la secció de "Clients" a l'aplicació.</li>
-                <li>Omple tots els camps obligatoris (nom, cognom, adreça, etc.).</li>
-                <li>Fes clic al botó "Afegir Client".</li>
-            </ol>
-            Aquí tens una captura de pantalla de com es veu la pantalla d'inserció de clients:
-            <img src="imatge.png" alt="Inserció de Client">
+            La gestió de clients permet afegir, eliminar i llistar clients. Cada client està associat a una persona, que conté dades com el nom, cognom, adreça, etc. Les dades dels clients s'emmagatzemen a les taules <code>persones</code> i <code>clients</code> de la base de dades.
         </p>
+        <h4>Camps del Client.java:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>nomField</td><td>Nom del client.</td></tr>
+            <tr><td>cognomField</td><td>Cognom del client.</td></tr>
+            <tr><td>adrecaField</td><td>Adreça del client.</td></tr>
+            <tr><td>documentIdentitatField</td><td>Document d'identitat.</td></tr>
+            <tr><td>dataNaixementField</td><td>Data de naixement.</td></tr>
+            <tr><td>telefonField</td><td>Telèfon del client.</td></tr>
+            <tr><td>emailField</td><td>Correu electrònic.</td></tr>
+            <tr><td>dataRegistreField</td><td>Data de registre.</td></tr>
+            <tr><td>tipusClientField</td><td>Tipus de client.</td></tr>
+            <tr><td>targetaCreditField</td><td>Targeta de crèdit.</td></tr>
+        </table>
+        <h4>Camps del formulari fxml:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>nomField</td><td>Nom del client.</td></tr>
+            <tr><td>cognomField</td><td>Cognom del client.</td></tr>
+            <tr><td>adrecaField</td><td>Adreça del client.</td></tr>
+            <tr><td>documentIdentitatField</td><td>Document d'identitat.</td></tr>
+            <tr><td>dataNaixementField</td><td>Data de naixement.</td></tr>
+            <tr><td>telefonField</td><td>Telèfon del client.</td></tr>
+            <tr><td>emailField</td><td>Correu electrònic.</td></tr>
+            <tr><td>dataRegistreField</td><td>Data de registre.</td></tr>
+            <tr><td>tipusClientField</td><td>Tipus de client.</td></tr>
+            <tr><td>targetaCreditField</td><td>Targeta de crèdit.</td></tr>
+        </table>
+        <h4>Funcionalitats:</h4>
+        <ul>
+            <li>Afegir Client: Omple els camps i fes clic a "Afegir Client".</li>
+            <li>Eliminar Client: Selecciona un client i fes clic a "Eliminar Client".</li>
+        </ul>
+        <img src="imatge.png" alt="Gestió de Clients">
 
-        <h3>Gestió de Reserves</h3>
+        <h3>Empleats</h3>
         <p>
-            Per gestionar reserves, segueix aquests passos:
-            <ol>
-                <li>Obre la secció de "Reserves".</li>
-                <li>Selecciona un client i una habitació.</li>
-                <li>Introdueix les dates d'inici i fi de la reserva.</li>
-                <li>Fes clic al botó "Fer Reserva".</li>
-            </ol>
-            Aquí tens una captura de pantalla de com es veu la pantalla de gestió de reserves:
-            <img src="imatge.png" alt="Gestió de Reserves">
+            La gestió d'empleats permet afegir, eliminar i llistar empleats. Cada empleat està associat a una persona, que conté dades com el nom, cognom, adreça, etc. Les dades dels empleats s'emmagatzemen a les taules <code>persones</code> i <code>empleats</code> de la base de dades.
         </p>
+        <h4>Camps del Empleat.java:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>nomField</td><td>Nom de l'empleat.</td></tr>
+            <tr><td>cognomField</td><td>Cognom de l'empleat.</td></tr>
+            <tr><td>adrecaField</td><td>Adreça de l'empleat.</td></tr>
+            <tr><td>documentIdentitatField</td><td>Document d'identitat.</td></tr>
+            <tr><td>dataNaixementField</td><td>Data de naixement.</td></tr>
+            <tr><td>telefonField</td><td>Telèfon de l'empleat.</td></tr>
+            <tr><td>emailField</td><td>Correu electrònic.</td></tr>
+            <tr><td>llocFeinaField</td><td>Lloc de treball.</td></tr>
+            <tr><td>dataContratacioField</td><td>Data de contractació.</td></tr>
+            <tr><td>salariBrutField</td><td>Salari brut.</td></tr>
+            <tr><td>estatLaboralField</td><td>Estat laboral.</td></tr>
+        </table>
+        <h4>Camps del formulari:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>nomField</td><td>Nom de l'empleat.</td></tr>
+            <tr><td>cognomField</td><td>Cognom de l'empleat.</td></tr>
+            <tr><td>adrecaField</td><td>Adreça de l'empleat.</td></tr>
+            <tr><td>documentIdentitatField</td><td>Document d'identitat.</td></tr>
+            <tr><td>dataNaixementField</td><td>Data de naixement.</td></tr>
+            <tr><td>telefonField</td><td>Telèfon de l'empleat.</td></tr>
+            <tr><td>emailField</td><td>Correu electrònic.</td></tr>
+            <tr><td>llocFeinaField</td><td>Lloc de treball.</td></tr>
+            <tr><td>dataContratacioField</td><td>Data de contractació.</td></tr>
+            <tr><td>salariBrutField</td><td>Salari brut.</td></tr>
+            <tr><td>estatLaboralField</td><td>Estat laboral.</td></tr>
+        </table>
+        <h4>Funcionalitats:</h4>
+        <ul>
+            <li>Afegir Empleat: Omple els camps i fes clic a "Afegir Empleat".</li>
+            <li>Eliminar Empleat: Selecciona un empleat i fes clic a "Eliminar Empleat".</li>
+        </ul>
+        <img src="imatge.png" alt="Gestió d'Empleats">
 
-        <h3>Gestió de Factures</h3>
+        <h3>Reserves</h3>
         <p>
-            Per generar una factura, segueix aquests passos:
-            <ol>
-                <li>Obre la secció de "Factures".</li>
-                <li>Selecciona una reserva.</li>
-                <li>Introdueix les dades de la factura (mètode de pagament, base imposable, IVA, etc.).</li>
-                <li>Fes clic al botó "Generar Factura".</li>
-            </ol>
-            Aquí tens una captura de pantalla de com es veu la pantalla de gestió de factures:
-            <img src="imatge.png" alt="Gestió de Factures">
+            La gestió de reserves permet crear reserves d'habitacions per als clients. Cada reserva està associada a un client i una habitació. Les dades de les reserves s'emmagatzemen a la taula <code>reserves</code> de la base de dades.
         </p>
+        <h4>Camps del Reserva.java:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>idClientField</td><td>ID del client.</td></tr>
+            <tr><td>idHabitacioField</td><td>ID de l'habitació.</td></tr>
+            <tr><td>dataIniciField</td><td>Data d'inici.</td></tr>
+            <tr><td>dataFiField</td><td>Data de finalització.</td></tr>
+        </table>
+        <h4>Camps del formulari:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>idClientField</td><td>ID del client que fa la reserva.</td></tr>
+            <tr><td>idHabitacioField</td><td>ID de l'habitació reservada.</td></tr>
+            <tr><td>dataIniciField</td><td>Data d'inici de la reserva.</td></tr>
+            <tr><td>dataFiField</td><td>Data de finalització de la reserva.</td></tr>
+        </table>
+        <h4>Funcionalitats:</h4>
+        <ul>
+            <li>Fer Reserva: Omple els camps i fes clic a "Fer Reserva".</li>
+        </ul>
+        <img src="imatge.png" alt="Gestió de Reserves">
 
-        <h3>Gestió de Tasques</h3>
+        <h3>Factures</h3>
         <p>
-            Per gestionar tasques, segueix aquests passos:
-            <ol>
-                <li>Obre la secció de "Tasques".</li>
-                <li>Selecciona un empleat i assigna-li una tasca.</li>
-                <li>Introdueix la descripció de la tasca i les dates.</li>
-                <li>Fes clic al botó "Afegir Tasca".</li>
-            </ol>
-            Aquí tens una captura de pantalla de com es veu la pantalla de gestió de tasques:
-            <img src="imatge.png" alt="Gestió de Tasques">
+            La gestió de factures permet generar factures per a les reserves. Cada factura està associada a una reserva i conté informació com la base imposable, l'IVA i el total. Les dades de les factures s'emmagatzemen a la taula <code>factures</code> de la base de dades.
         </p>
+        <h4>Camps del Factura.java:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>idReservaField</td><td>ID de la reserva.</td></tr>
+            <tr><td>baseImposableField</td><td>Base imposable.</td></tr>
+            <tr><td>ivaField</td><td>IVA aplicat.</td></tr>
+            <tr><td>totalField</td><td>Total de la factura.</td></tr>
+            <tr><td>dataEmisioField</td><td>Data d'emissió.</td></tr>
+            <tr><td>metodePagamentComboBox</td><td>Mètode de pagament.</td></tr>
+        </table>
+        <h4>Camps del formulari:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>idReservaField</td><td>ID de la reserva associada.</td></tr>
+            <tr><td>baseImposableField</td><td>Base imposable de la factura.</td></tr>
+            <tr><td>ivaField</td><td>IVA aplicat a la factura.</td></tr>
+            <tr><td>totalField</td><td>Total de la factura.</td></tr>
+            <tr><td>dataEmisioField</td><td>Data d'emissió de la factura.</td></tr>
+            <tr><td>metodePagamentComboBox</td><td>Mètode de pagament.</td></tr>
+        </table>
+        <h4>Funcionalitats:</h4>
+        <ul>
+            <li>Generar Factura: Omple els camps i fes clic a "Generar Factura".</li>
+            <li>Eliminar Factura: Selecciona una factura i fes clic a "Eliminar Factura".</li>
+        </ul>
+        <img src="imatge.png" alt="Gestió de Factures">
+
+        <h3>Tasques</h3>
+        <p>
+            La gestió de tasques permet assignar tasques als empleats i modificar-ne l'estat. Cada tasca està associada a un empleat i conté informació com la descripció, les dates de creació i execució, i l'estat. Les dades de les tasques s'emmagatzemen a les taules <code>tasques</code> i <code>empleat_tasca</code> de la base de dades.
+        </p>
+        <h4>Camps del Tasca.java:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>idEmpleatField</td><td>ID de l'empleat.</td></tr>
+            <tr><td>descripcioField</td><td>Descripció de la tasca.</td></tr>
+            <tr><td>dataCreacioField</td><td>Data de creació.</td></tr>
+            <tr><td>dataExecucioField</td><td>Data d'execució.</td></tr>
+            <tr><td>estatComboBox</td><td>Estat de la tasca.</td></tr>
+        </table>
+        <h4>Camps del formulari:</h4>
+        <table>
+            <tr><th>Camp</th><th>Descripció</th></tr>
+            <tr><td>idEmpleatField</td><td>ID de l'empleat assignat.</td></tr>
+            <tr><td>descripcioField</td><td>Descripció de la tasca.</td></tr>
+            <tr><td>dataCreacioField</td><td>Data de creació de la tasca.</td></tr>
+            <tr><td>dataExecucioField</td><td>Data d'execució de la tasca.</td></tr>
+            <tr><td>estatComboBox</td><td>Estat de la tasca.</td></tr>
+        </table>
+        <h4>Funcionalitats:</h4>
+        <ul>
+            <li>Afegir Tasca: Omple els camps i fes clic a "Afegir Tasca".</li>
+            <li>Modificar Estat: Selecciona una tasca i fes clic a "Modificar Estat".</li>
+        </ul>
+        <img src="imatge.png" alt="Gestió de Tasques">
     </div>
 </div>
 
-<!-- Incidents i Problemes -->
 <div class="section">
-    <h2 onclick="toggleSection('incidents')">Incidents i Problemes</h2>
+    <h2 onclick="toggleSection('incidents')">⬊ Incidents i Problemes ⬋</h2>
     <div id="incidents" class="content">
         <h3>Problema 1: Error de Connexió a la Base de Dades</h3>
         <p>
@@ -126,7 +210,7 @@
         </p>
     </div>
 </div>
-
+</div>
 <script>
     function toggleSection(id) {
         const content = document.getElementById(id);

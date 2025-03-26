@@ -9,6 +9,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 
 <VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gestio_hotel_dam_joelfm.FacturesController">
     <padding>
@@ -17,18 +18,20 @@
     
     <Label text="Gestió de Factures" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
 
-    <!-- Camps de text per generar noves factures -->
+    <!-- Camps per generar noves factures -->
     <HBox spacing="10">
-        <TextField fx:id="idReservaField" promptText="ID de la Reserva"/>
-        <TextField fx:id="baseImposableField" promptText="Base Imposable (€)"/>
+        <ComboBox fx:id="reservaComboBox" promptText="Selecciona una reserva" prefWidth="500"/>
     </HBox>
     <HBox spacing="10">
+        <TextField fx:id="baseImposableField" promptText="Base Imposable (€)" editable="false"/>
         <TextField fx:id="ivaField" promptText="IVA (%)"/>
-        <TextField fx:id="totalField" promptText="Total (€)" editable="false"/>
     </HBox>
     <HBox spacing="10">
-        <TextField fx:id="dataEmisioField" promptText="Data d'Emissió (YYYY-MM-DD)"/>
-        <ComboBox fx:id="metodePagamentComboBox" promptText="Mètode de Pagament"/>
+        <TextField fx:id="totalField" promptText="Total (€)" editable="false"/>
+        <DatePicker fx:id="dataEmisioPicker" promptText="Data d'Emissió"/>
+    </HBox>
+    <HBox spacing="10">
+        <ComboBox fx:id="metodePagamentComboBox" promptText="Mètode de Pagament" prefWidth="200"/>
     </HBox>
     
     <!-- Botons per generar i eliminar factures -->
